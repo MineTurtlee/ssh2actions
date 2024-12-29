@@ -67,7 +67,7 @@ fi
 
 echo -e "${INFO} Start ngrok proxy for SSH port..."
 screen -dmS ngrok \
-    ngrok tcp 65530 \
+    ngrok tcp 22 \
     --log "${LOG_FILE}" \
     --authtoken "${NGROK_TOKEN}" \
     --region "${NGROK_REGION:-us}" \
