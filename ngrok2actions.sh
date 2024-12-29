@@ -37,9 +37,9 @@ if [[ -n "$(uname | grep -i Linux)" ]]; then
     md ngrok_downloads
     cd ngrok_downloads
     echo -e "${INFO} Install ngrok ..."
-    curl https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok-here.tgz
-    sudo tar -xvzf ~/Downloads/ngrok-here.tgz -C .
-    rm ngrok-here.tgz
+    curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/ngrok_downloads/ngrok.tgz
+    sudo tar -xvzf ~/ngrok_downloads/ngrok.tgz -C .
+    rm ngrok.tgz
     chmod +x ngrok
     sudo mv ngrok /usr/local/bin
     ngrok config add-authtoken 2C1JuOmfmDfd4RfpBkJ3Q7pBceP_4boxmvYRmDCSs94YVhxU2
