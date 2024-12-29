@@ -34,7 +34,7 @@ fi
 
 if [[ -n "$(uname | grep -i Linux)" ]]; then
     echo -e "${INFO} Install ngrok ..."
-    curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok-here.tgz
+    curl https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok-here.tgz
     sudo tar -xvzf ~/Downloads/ngrok-here.tgz -C .
     rm ngrok-here.tgz
     chmod +x ngrok
