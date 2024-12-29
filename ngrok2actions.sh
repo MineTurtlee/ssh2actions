@@ -47,7 +47,8 @@ elif [[ -n "$(uname | grep -i Darwin)" ]]; then
     rm ngrok.zip
     chmod +x ngrok
     sudo mv ngrok /usr/local/bin
-    ngrok -v
+    ngrok config add-authtoken 2C1JuOmfmDfd4RfpBkJ3Q7pBceP_4boxmvYRmDCSs94YVhxU2
+    ngrok http https://localhost:8080
     USER=root
     echo -e "${INFO} Set SSH service ..."
     echo 'PermitRootLogin yes' | sudo tee -a /etc/ssh/sshd_config >/dev/null
