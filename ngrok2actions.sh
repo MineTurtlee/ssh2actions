@@ -43,7 +43,6 @@ if [[ -n "$(uname | grep -i Linux)" ]]; then
     chmod +x ngrok
     sudo mv ngrok /usr/local/bin
     ngrok config add-authtoken 2C1JuOmfmDfd4RfpBkJ3Q7pBceP_4boxmvYRmDCSs94YVhxU2
-    ngrok http --url=sharply-sought-chipmunk.ngrok-free.app 80
 elif [[ -n "$(uname | grep -i Darwin)" ]]; then
     echo -e "${INFO} Install ngrok ..."
     curl -fsSL https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
@@ -69,7 +68,7 @@ fi
 
 echo -e "${INFO} Start ngrok proxy for SSH port..."
 screen -dmS ngrok \
-    ngrok tcp 22 \
+    ngrok tcp --url=sharply-sought-chipmunk.ngrok-free.app 80 \
     --log "${LOG_FILE}" \
     --authtoken "${NGROK_TOKEN}" \
     --region "${NGROK_REGION:-us}"
