@@ -34,13 +34,13 @@ fi
 
 if [[ -n "$(uname | grep -i Linux)" ]]; then
     echo -e "${INFO} Install ngrok ..."
-    curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok.tgz
-    sudo tar -xvzf ~/Downloads/ngrok.tgz -C .
-    rm ngrok.tgz
-    chmod +x ngrok
-    sudo mv ngrok /usr/local/bin
-    ngrok config add-authtoken 2C1JuOmfmDfd4RfpBkJ3Q7pBceP_4boxmvYRmDCSs94YVhxU2
-    ngrok http --url=sharply-sought-chipmunk.ngrok-free.app 80
+    curl -fsSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok-here.tgz
+    sudo tar -xvzf ~/Downloads/ngrok-here.tgz -C .
+    rm ngrok-here.tgz
+    chmod +x ngrok-here
+    sudo mv ngrok-here /usr/local/bin
+    ngrok-here config add-authtoken 2C1JuOmfmDfd4RfpBkJ3Q7pBceP_4boxmvYRmDCSs94YVhxU2
+    ngrok-here http --url=sharply-sought-chipmunk.ngrok-free.app 80
 elif [[ -n "$(uname | grep -i Darwin)" ]]; then
     echo -e "${INFO} Install ngrok ..."
     curl -fsSL https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip -o ngrok.zip
