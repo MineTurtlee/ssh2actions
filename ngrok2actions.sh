@@ -68,10 +68,11 @@ fi
 
 echo -e "${INFO} Start ngrok proxy for SSH port..."
 screen -dmS ngrok \
-    ngrok tcp --url=sharply-sought-chipmunk.ngrok-free.app 80 \
+    ngrok tcp \
     --log "${LOG_FILE}" \
     --authtoken "${NGROK_TOKEN}" \
-    --region "${NGROK_REGION:-us}"
+    --region "${NGROK_REGION:-us}" \
+    65530
 
 while ((${SECONDS_LEFT:=10} > 0)); do
     echo -e "${INFO} Please wait ${SECONDS_LEFT}s ..."
