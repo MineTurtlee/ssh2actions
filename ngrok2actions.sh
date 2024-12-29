@@ -33,6 +33,9 @@ if [[ -z "${SSH_PASSWORD}" && -z "${SSH_PUBKEY}" && -z "${GH_SSH_PUBKEY}" ]]; th
 fi
 
 if [[ -n "$(uname | grep -i Linux)" ]]; then
+    cd /~/
+    md ngrok_downloads
+    cd ngrok_downloads
     echo -e "${INFO} Install ngrok ..."
     curl https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -o /~/Downloads/ngrok-here.tgz
     sudo tar -xvzf ~/Downloads/ngrok-here.tgz -C .
